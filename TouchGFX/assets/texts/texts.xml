@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_3UKU" Alignment="Left" TypographyId="ScoreboardText">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_04BU" Alignment="Left" TypographyId="ScoreboardText">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_NO8K" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_29TW" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">Level 3: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MG3S" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">Level 2: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4RTD" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">Level 1: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MZ4A" Alignment="Left" TypographyId="ScoreboardText">
+        <Translation Language="GB">Highest Score</Translation>
+      </Text>
+      <Text Id="__SingleUse_8R2Q" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_3PV5" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_UGVU" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_9DEO" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">Score:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7QQM" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0WHI" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Your High Score:</Translation>
+      </Text>
+      <Text Id="__SingleUse_3VQU" Alignment="Left" TypographyId="WildCard">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_BL70" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Level :</Translation>
+      </Text>
+      <Text Id="__SingleUse_T1N0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Game Over</Translation>
+      </Text>
+      <Text Id="__SingleUse_RR2K" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Level 3</Translation>
+      </Text>
+      <Text Id="__SingleUse_IVWP" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Level 2</Translation>
+      </Text>
+      <Text Id="__SingleUse_4NRP" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Level 1</Translation>
+      </Text>
+      <Text Id="__SingleUse_KYL5" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Scoreboard</Translation>
+      </Text>
+      <Text Id="__SingleUse_QDI1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Low</Translation>
+      </Text>
+      <Text Id="__SingleUse_JX8K" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">High</Translation>
+      </Text>
+      <Text Id="__SingleUse_6VN0" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start Game</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdanaz.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdanaz.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="WildCard" Font="verdanai.ttf" Size="17" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="ScoreboardText" Font="verdanai.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

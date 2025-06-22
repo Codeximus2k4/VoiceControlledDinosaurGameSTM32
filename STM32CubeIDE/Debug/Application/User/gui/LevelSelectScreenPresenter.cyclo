@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/levelselectscreen_screen/LevelSelectScreenPresenter.hpp:28:13:LevelSelectScreenPresenter::~LevelSelectScreenPresenter()	1
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenPresenter.cpp:10:6:virtual void LevelSelectScreenPresenter::activate()	1
+../../TouchGFX/gui/include/gui/levelselectscreen_screen/LevelSelectScreenPresenter.hpp:28:13:virtual LevelSelectScreenPresenter::~LevelSelectScreenPresenter()	1
+../../TouchGFX/gui/include/gui/levelselectscreen_screen/LevelSelectScreenPresenter.hpp:28:13:virtual void* LevelSelectScreenPresenter::_ZThn4_N26LevelSelectScreenPresenterD1Ev()	1
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenPresenter.cpp:4:1:LevelSelectScreenPresenter::LevelSelectScreenPresenter(LevelSelectScreenView&)	1

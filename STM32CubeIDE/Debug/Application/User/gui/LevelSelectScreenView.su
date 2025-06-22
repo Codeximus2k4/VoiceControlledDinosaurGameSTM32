@@ -1,0 +1,11 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenView.cpp:14:6:virtual void LevelSelectScreenView::tearDownScreen()	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenView.cpp:19:6:virtual void LevelSelectScreenView::loadLevel1()	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenView.cpp:23:6:virtual void LevelSelectScreenView::loadLevel2()	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenView.cpp:27:6:virtual void LevelSelectScreenView::loadLevel3()	0	static
+../../TouchGFX/gui/include/gui/levelselectscreen_screen/LevelSelectScreenView.hpp:11:13:LevelSelectScreenView::~LevelSelectScreenView()	8	static
+../../TouchGFX/gui/include/gui/levelselectscreen_screen/LevelSelectScreenView.hpp:11:13:virtual LevelSelectScreenView::~LevelSelectScreenView()	8	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenView.cpp:4:1:LevelSelectScreenView::LevelSelectScreenView()	8	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/levelselectscreen_screen/LevelSelectScreenView.cpp:9:6:virtual void LevelSelectScreenView::setupScreen()	0	static

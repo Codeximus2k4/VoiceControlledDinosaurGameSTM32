@@ -1,0 +1,15 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:51:6:virtual void GameScreenView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:15:13:GameScreenView::~GameScreenView()	8	static
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:15:13:virtual GameScreenView::~GameScreenView()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:56:10:uint32_t xorshift32()	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:62:5:int getRandomInt(int, int)	8	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:65:6:bool checkCollision(int, int, int, int, int, int, int, int)	16	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:72:6:void GameScreenView::spawnBird(int, int, int, int)	16	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:77:6:void GameScreenView::spawnCactus(int, int)	8	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:82:6:void GameScreenView::updateObstacle(uint32_t)	24	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:11:1:GameScreenView::GameScreenView()	32	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:46:6:virtual void GameScreenView::setupScreen()	0	static
+C:/TouchGFXProjects/VoiceControlledDinoGame/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:115:6:virtual void GameScreenView::tickEvent()	56	static

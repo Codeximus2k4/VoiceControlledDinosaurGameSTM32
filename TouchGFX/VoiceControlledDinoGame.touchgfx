@@ -1,0 +1,909 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "StartScreen",
+        "Components": [
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "StartGameButton",
+            "Y": 160,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_6VN0",
+            "ReleasedColor": {
+              "Red": 67,
+              "Green": 245,
+              "Blue": 7
+            },
+            "PressedColor": {
+              "Red": 39,
+              "Green": 99,
+              "Blue": 4
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "ScoreboardButton",
+            "Y": 227,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_KYL5",
+            "ReleasedColor": {
+              "Red": 252,
+              "Green": 210
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "StartGameButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "LevelSelectScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ScoreboardButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "ScoreboardScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "ScoreboardScreen",
+        "Components": [
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "Homebutton",
+            "X": 180,
+            "Y": 260,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "IconPressed": "__generated\\icon_theme_images_action_home_filled_50_50_5B5D5E.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_home_filled_50_50_FCFEFF.svg.png",
+            "IconX": 5,
+            "IconY": 3,
+            "IconHeight": 50,
+            "IconWidth": 50
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 64,
+            "Y": 78,
+            "Width": 112,
+            "Height": 19,
+            "TextId": "__SingleUse_MZ4A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 5,
+              "Blue": 5
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "level1_score",
+            "X": 30,
+            "Y": 134,
+            "Width": 200,
+            "Height": 17,
+            "TextId": "__SingleUse_4RTD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 5,
+              "Green": 255,
+              "Blue": 238
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_04BU",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "level2_score",
+            "X": 30,
+            "Y": 166,
+            "Width": 200,
+            "Height": 19,
+            "TextId": "__SingleUse_MG3S",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 3,
+              "Green": 255,
+              "Blue": 242
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_NO8K",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "level3_score",
+            "X": 30,
+            "Y": 197,
+            "Width": 200,
+            "Height": 17,
+            "TextId": "__SingleUse_29TW",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255,
+              "Blue": 251
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_3UKU",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Homebutton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StartScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call ScoreboardScreen updateScore",
+              "ActionComponent": "ScoreboardScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "updateScore",
+            "Description": "update the scoreboard"
+          }
+        ]
+      },
+      {
+        "Name": "LevelSelectScreen",
+        "Components": [
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "Homebutton",
+            "X": 180,
+            "Y": 260,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "IconPressed": "__generated\\icon_theme_images_action_home_filled_50_50_5B5D5E.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_home_filled_50_50_FCFEFF.svg.png",
+            "IconX": 5,
+            "IconY": 3,
+            "IconHeight": 50,
+            "IconWidth": 50
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "level1Button",
+            "X": 28,
+            "Y": 86,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_active.png",
+            "TextId": "__SingleUse_4NRP",
+            "ReleasedColor": {
+              "Red": 5
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\tiny_round_active.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "level2Button",
+            "X": 28,
+            "Y": 149,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_active.png",
+            "TextId": "__SingleUse_IVWP",
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "level3Button",
+            "X": 28,
+            "Y": 220,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_round_active.png",
+            "TextId": "__SingleUse_RR2K",
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Image",
+            "Name": "flame1",
+            "X": 144,
+            "Y": 95,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "flame1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "flame2_1",
+            "X": 144,
+            "Y": 160,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "flame1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "flame2_2",
+            "X": 144,
+            "Y": 229,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "flame1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "flame3_1",
+            "X": 176,
+            "Y": 160,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "flame1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "flame3_2",
+            "X": 176,
+            "Y": 229,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "flame1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "flame3_3",
+            "X": 208,
+            "Y": 229,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "flame1.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "level1Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "GameScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "level1Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "loadLevel1"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "level2Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "GameScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "level2Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "loadLevel2"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "level3Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "GameScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "level3Button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "loadLevel3"
+            }
+          },
+          {
+            "InteractionName": "Interaction7",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Homebutton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "StartScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "GameScreen",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background2",
+            "Width": 640,
+            "Height": 320,
+            "RelativeFilename": "Desert_BackGround.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "background",
+            "X": 640,
+            "Width": 640,
+            "Height": 320,
+            "RelativeFilename": "Desert_BackGround.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "dinosaur",
+            "X": 47,
+            "Y": 212,
+            "Width": 48,
+            "Height": 48,
+            "RelativeFilename": "move_1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "cactus",
+            "X": 283,
+            "Y": 212,
+            "Width": 37,
+            "Height": 41,
+            "RelativeFilename": "cactus_1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "lives_1",
+            "X": 6,
+            "Y": 5,
+            "Width": 9,
+            "Height": 10,
+            "RelativeFilename": "heart_full.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "lives_2",
+            "X": 21,
+            "Y": 5,
+            "Width": 9,
+            "Height": 10,
+            "RelativeFilename": "heart_full.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "lives_3",
+            "X": 38,
+            "Y": 5,
+            "Width": 9,
+            "Height": 10,
+            "RelativeFilename": "heart_full.png"
+          },
+          {
+            "Type": "LineProgress",
+            "Name": "volumeLevel",
+            "X": 6,
+            "Y": 37,
+            "Width": 10,
+            "Height": 100,
+            "FileNameProgress": "__generated\\alternate_theme_images_widgets_lineprogress_fillers_plain_normal_tiny_active_90.png",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5.0,
+            "StartY": 100.0,
+            "EndX": 5.0,
+            "LineWidth": 10.0,
+            "LineEndingStyle": "Butt",
+            "Preset": "alternate_theme\\presets\\lineprogress\\images\\plain\\normal\\tiny_active_90.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_lineprogress_backgrounds_image_plain_normal_tiny_90.png",
+            "ProgressRangeMax": 100
+          },
+          {
+            "Type": "Image",
+            "Name": "low_volume",
+            "X": 17,
+            "Y": 93,
+            "Width": 16,
+            "Height": 16,
+            "RelativeFilename": "low_jump.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "high_volume",
+            "X": 17,
+            "Y": 41,
+            "Width": 16,
+            "Height": 16,
+            "RelativeFilename": "high_jump.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "high_volume_text",
+            "X": 38,
+            "Y": 37,
+            "Width": 52,
+            "Height": 24,
+            "TextId": "__SingleUse_JX8K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 212,
+              "Green": 4,
+              "Blue": 4
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "low_volume_text",
+            "X": 38,
+            "Y": 86,
+            "Width": 47,
+            "Height": 24,
+            "TextId": "__SingleUse_QDI1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 24,
+              "Green": 176,
+              "Blue": 4
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "special_cactus",
+            "X": 320,
+            "Y": 226,
+            "Width": 28,
+            "Height": 27,
+            "RelativeFilename": "special_cactus.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "scoreArea",
+            "X": 6,
+            "Y": 19,
+            "Width": 200,
+            "Height": 18,
+            "TextId": "__SingleUse_9DEO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 10,
+              "Green": 72,
+              "Blue": 242
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_UGVU",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "bird",
+            "X": 283,
+            "Y": 70,
+            "Width": 32,
+            "Height": 16,
+            "RelativeFilename": "flying_dino_1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 32,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_1_3_1",
+            "X": 190,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_1",
+            "X": 63,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_1_3",
+            "X": 159,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_1_1",
+            "X": 95,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_1_2",
+            "X": 127,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image3",
+            "X": 222,
+            "Y": 253,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "ground3.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call GameScreen gotoGameOverScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "GameOverScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "gotoGameOverScreen",
+            "Description": "change screen to Game Over"
+          }
+        ]
+      },
+      {
+        "Name": "GameOverScreen",
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "GameOver",
+            "X": 64,
+            "Y": 83,
+            "Width": 123,
+            "Height": 24,
+            "TextId": "__SingleUse_T1N0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 24,
+              "Green": 250,
+              "Blue": 7
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textHolder",
+            "X": 46,
+            "Y": 138,
+            "Width": 74,
+            "Height": 24,
+            "TextId": "__SingleUse_BL70",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 226,
+              "Blue": 3
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player_level",
+            "X": 125,
+            "Y": 141,
+            "Width": 100,
+            "Height": 18,
+            "TextId": "__SingleUse_3VQU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 247,
+              "Green": 207,
+              "Blue": 2
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_8R2Q",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textHolder2",
+            "X": 17,
+            "Y": 186,
+            "Width": 134,
+            "Height": 17,
+            "TextId": "__SingleUse_0WHI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 252,
+              "Green": 5,
+              "Blue": 5
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player_score",
+            "X": 151,
+            "Y": 185,
+            "Width": 100,
+            "Height": 18,
+            "TextId": "__SingleUse_7QQM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 5,
+              "Blue": 5
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_3PV5",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "Homebutton",
+            "X": 180,
+            "Y": 260,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_outline_pressed.png",
+            "IconPressed": "__generated\\icon_theme_images_action_home_filled_50_50_5B5D5E.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_home_filled_50_50_FCFEFF.svg.png",
+            "IconX": 5,
+            "IconY": 3,
+            "IconHeight": 50,
+            "IconWidth": 50
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call GameOverScreen showPlayerStat",
+              "ActionComponent": "GameOverScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Homebutton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "StartScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "showPlayerStat",
+            "Description": "render the player stat after the game"
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "VoiceControlledDinoGame",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "StartScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

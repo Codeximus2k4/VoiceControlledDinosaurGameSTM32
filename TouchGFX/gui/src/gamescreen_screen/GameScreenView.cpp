@@ -109,17 +109,25 @@ void GameScreenView::tickEvent()
 			volumeLevel.setValue((volumeValue-2000)/20);
 		}
 	// Dinosaur
-// Jump checking
-
-// Hit cooldown:
+	// Jump checking
+	if (volumeValue >= lowJumpValue && animation_state == walkState){
+		animation_state =  jumpState; animation_frame = 0;
+		if (volumeValue>=lowJumpValue and volumeValue <=highJumpValue) y_velocity =  low_jump_velocity;
+		else if (volumeValue >= highJumpValue) y_velocity = high_jump_velocity;
+	}
+	// Hit cooldown:
+		if (tickCount%7==0){
+		if (hit_cooldown+1 >hit_cooldown_limit) hit_cooldown =  hit_cooldown_limit+1;
+		else hit_cooldown++;
+		}
 	
-// Dash checking
+	// Dash checking
 	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET && animation_state== walkState){
 	}
 
-// 	Position update
+	// 	Position update
 	
-// Y_velocity update
+	// Y_velocity update
 
 		if (animation_state == jumpState){
 			if (y_velocity == 0){

@@ -65,7 +65,12 @@ void GameScreenView::tickEvent()
 	tickCount++;
 
 	// score :
-	
+	score += speed_multiplier;
+	Unicode::snprintf(scoreAreaBuffer, sizeof(scoreAreaBuffer)/sizeof(Unicode::UnicodeChar), "%d",score);
+	scoreArea.setWildcard(scoreAreaBuffer);
+	scoreArea.invalidate();
+	if (score > 2000) speed_multiplier = 2;
+	if (score > 4000) speed_multiplier = 3;
 
 // Obstacle logic:we will need to spawn them based on time
 // if it is running then only update its position

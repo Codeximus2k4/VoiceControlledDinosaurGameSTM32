@@ -16,4 +16,16 @@ void LevelSelectScreenView::tearDownScreen()
     LevelSelectScreenViewBase::tearDownScreen();
 }
 
-//TODO level select
+void LevelSelectScreenView::loadLevel1(){
+	level = 1;
+	score = 0;
+}
+
+void LevelSelectScreenView::loadLevel2(){
+	level = 2;
+	score = 0;
+}
+void LevelSelectScreenView::loadLevel3(){
+	level = 3;
+	score = 0;
+}

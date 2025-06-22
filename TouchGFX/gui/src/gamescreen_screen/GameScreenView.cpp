@@ -76,48 +76,48 @@ void GameScreenView::tickEvent()
 	// Cactus logic
 	
 	// Game UI update
-		// Background
-		if (tickCount%10==0) {
-			background.moveTo(background.getX()-1, background.getY());
-			background2.moveTo(background2.getX()-1,background2.getY());
-			if (background.getX() < -background.getWidth()){
-				background.moveTo(background2.getX()+background2.getWidth(), background.getY());
-			}
-			if (background2.getX() < -background.getWidth()){
-				background2.moveTo(background.getX()+background.getWidth(), background2.getY());
-			}
+	// Background
+	if (tickCount % 10 == 0) {
+		background.moveTo(background.getX() - 1, background.getY());
+		background2.moveTo(background2.getX() - 1, background2.getY());
+		if (background.getX() < -background.getWidth()) {
+			background.moveTo(background2.getX() + background2.getWidth(), background.getY());
 		}
-		// Health
-		if (lives ==2) lives_3.setBitmap(touchgfx::Bitmap(HealthLost));
-		else if (lives ==1) lives_2.setBitmap(touchgfx::Bitmap(HealthLost));
-		else if (lives ==0) {
-			lives_1.setBitmap(touchgfx::Bitmap(HealthLost));
-			if (level==3 && score >level3_highscore) level3_highscore = score;
-			if (level==2 && score >level2_highscore) level2_highscore = score;
-			if (level==1 && score >level1_highscore) level1_highscore = score;
-			speed_multiplier = 1;
-			gotoGameOverScreen();
+		if (background2.getX() < -background.getWidth()) {
+			background2.moveTo(background.getX() + background.getWidth(), background2.getY());
 		}
-		lives_3.invalidate();
-		lives_2.invalidate();
-		lives_1.invalidate();
+	}
+	// Health
+	if (lives == 2) lives_3.setBitmap(touchgfx::Bitmap(HealthLost));
+	else if (lives == 1) lives_2.setBitmap(touchgfx::Bitmap(HealthLost));
+	else if (lives == 0) {
+		lives_1.setBitmap(touchgfx::Bitmap(HealthLost));
+		if (level == 3 && score > level3_highscore) level3_highscore = score;
+		if (level == 2 && score > level2_highscore) level2_highscore = score;
+		if (level == 1 && score > level1_highscore) level1_highscore = score;
+		speed_multiplier = 1;
+		gotoGameOverScreen();
+	}
+	lives_3.invalidate();
+	lives_2.invalidate();
+	lives_1.invalidate();
 
-		// Sound level
-		if (osMessageQueueGetCount(soundInputQueueHandle)>0){
-			osMessageQueueGet(soundInputQueueHandle, &volumeValue, NULL, 10);
-			if (volumeValue >4000) volumeValue =4000;
-			volumeLevel.setValue((volumeValue-2000)/20);
-		}
+	// Sound level
+	if (osMessageQueueGetCount(soundInputQueueHandle) > 0) {
+		osMessageQueueGet(soundInputQueueHandle, &volumeValue, NULL, 10);
+		if (volumeValue > 4000) volumeValue = 4000;
+		volumeLevel.setValue((volumeValue - 2000) / 20);
+	}
 	// Dinosaur
 	// Jump checking
-	if (volumeValue >= lowJumpValue && animation_state == walkState){
-		animation_state =  jumpState; animation_frame = 0;
-		if (volumeValue>=lowJumpValue and volumeValue <=highJumpValue) y_velocity =  low_jump_velocity;
+	if (volumeValue >= lowJumpValue && animation_state == walkState) {
+		animation_state = jumpState; animation_frame = 0;
+		if (volumeValue >= lowJumpValue && volumeValue <= highJumpValue) y_velocity = low_jump_velocity;
 		else if (volumeValue >= highJumpValue) y_velocity = high_jump_velocity;
 	}
 	// Hit cooldown:
-		if (tickCount%7==0){
-		if (hit_cooldown+1 >hit_cooldown_limit) hit_cooldown =  hit_cooldown_limit+1;
+		if (tickCount % 7 == 0) {
+		if (hit_cooldown + 1 > hit_cooldown_limit) hit_cooldown = hit_cooldown_limit + 1;
 		else hit_cooldown++;
 		}
 	

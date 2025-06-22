@@ -126,6 +126,22 @@ void GameScreenView::tickEvent()
 	}
 
 	// 	Position update
+	if (animation_state == jumpState){
+		dinosaur.moveTo(dinosaur.getX(), dinosaur.getY() -  y_velocity);
+	}
+	else if (animation_state == fallState){
+		uint16_t future_pos =  dinosaur.getY() + y_velocity;
+		if (ground_pos > future_pos){
+			dinosaur.moveTo(dinosaur.getX(),future_pos);
+		}
+		else
+		{
+			dinosaur.moveTo(dinosaur.getX(),ground_pos);
+			animation_state = walkState;
+			animation_frame = 0;
+
+		}
+	}
 	
 	// Y_velocity update
 
@@ -135,14 +151,42 @@ void GameScreenView::tickEvent()
 			}
 			else y_velocity --;
 		}
-		else if (animation_state ==fallState){
-			if (tickCount%2==0){
-				if (y_velocity <3) y_velocity ++;
+		else if (animation_state == fallState){
+			if (tickCount % 2 == 0){
+				if (y_velocity < 3) y_velocity ++;
 			}
 		}
-//  Animation update
 
-	
+	// Animation update
+	if (flickering <= flickering_duration){
+		if (tickCount % 3 == 0){
+			flickering++;
+			if (dinosaur.isVisible()){
+				dinosaur.setVisible(false);
+			}
+			else dinosaur.setVisible(true);
+		}
+	}
+	else dinosaur.setVisible(true);
 
-
+	if (tickCount % 3 == 0)
+	{
+		if (animation_state == walkState){
+			animation_frame = (animation_frame + 1) % animation_frame_num[walkState];
+			dinosaur.setBitmap(touchgfx::Bitmap(DinosaurWalk[animation_frame]));
+		}
+		else if (animation_state == jumpState){
+			if (animation_frame < animation_frame_num[jumpState] - 1){
+				animation_frame++;
+			}
+			dinosaur.setBitmap(touchgfx::Bitmap(DinosaurJump[animation_frame]));
+		}
+		else if (animation_state == fallState){
+			if (animation_frame < animation_frame_num[fallState] - 1){
+				animation_frame++;
+						}
+			dinosaur.setBitmap(touchgfx::Bitmap(DinosaurFall[animation_frame]));
+		}
+		dinosaur.invalidate();
+	}
 }
